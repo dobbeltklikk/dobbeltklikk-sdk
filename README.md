@@ -2,15 +2,14 @@
 
 # Dobbeltklikk API SDK for PHP
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/dobbeltklikk/dobbeltklikk-sdk.svg?style=flat-square)](https://packagist.org/packages/dobbeltklikk/dobbeltklikk-sdk)
-[![Tests](https://img.shields.io/github/actions/workflow/status/dobbeltklikk/dobbeltklikk-sdk/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/dobbeltklikk/dobbeltklikk-sdk/actions/workflows/run-tests.yml)
-[![Total Downloads](https://img.shields.io/packagist/dt/dobbeltklikk/dobbeltklikk-sdk.svg?style=flat-square)](https://packagist.org/packages/dobbeltklikk/dobbeltklikk-sdk)
-
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/dobbeltklikk/php-sdk.svg?style=flat-square)](https://packagist.org/packages/dobbeltklikk/php-sdk)
+[![Tests](https://img.shields.io/github/actions/workflow/status/dobbeltklikk/php-sdk/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/dobbeltklikk/php-sdk/actions/workflows/run-tests.yml)
+[![Total Downloads](https://img.shields.io/packagist/dt/dobbeltklikk/php-sdk.svg?style=flat-square)](https://packagist.org/packages/dobbeltklikk/php-sdk)
 
 ## Installation
 
 ```shell
-composer require dobbeltklikk/dobbeltklikk-sdk
+composer require dobbeltklikk/php-sdk
 ```
 
 ## Testing
@@ -18,7 +17,6 @@ composer require dobbeltklikk/dobbeltklikk-sdk
 ```bash
 composer test
 ```
-
 
 ## License
 
