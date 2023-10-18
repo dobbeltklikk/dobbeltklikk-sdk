@@ -3,13 +3,13 @@
 namespace Dobbeltklikk\Sdk\Resource;
 
 use Dobbeltklikk\Sdk\Requests\User\UserIndex;
-use Dobbeltklikk\Sdk\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\BaseResource;
+use Saloon\Http\Response;
 
-class User extends Resource
+class User extends BaseResource
 {
-	public function UserIndex(): Response
-	{
-		return $this->connector->send(new UserIndex());
-	}
+    public function UserIndex(): Response
+    {
+        return $this->connector->send(new UserIndex());
+    }
 }

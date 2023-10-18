@@ -4,25 +4,18 @@ namespace Dobbeltklikk\Sdk\Resource;
 
 use Dobbeltklikk\Sdk\Requests\ScanJob\ScanJobDestroy;
 use Dobbeltklikk\Sdk\Requests\ScanJob\ScanJobShow;
-use Dobbeltklikk\Sdk\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\BaseResource;
+use Saloon\Http\Response;
 
-class ScanJob extends Resource
+class ScanJob extends BaseResource
 {
-	/**
-	 * @param string $jobId
-	 */
-	public function ScanJobShow(string $jobId): Response
-	{
-		return $this->connector->send(new ScanJobShow($jobId));
-	}
+    public function ScanJobShow(string $jobId): Response
+    {
+        return $this->connector->send(new ScanJobShow($jobId));
+    }
 
-
-	/**
-	 * @param string $jobId
-	 */
-	public function ScanJobDestroy(string $jobId): Response
-	{
-		return $this->connector->send(new ScanJobDestroy($jobId));
-	}
+    public function ScanJobDestroy(string $jobId): Response
+    {
+        return $this->connector->send(new ScanJobDestroy($jobId));
+    }
 }

@@ -7,46 +7,42 @@ use Dobbeltklikk\Sdk\Requests\Document\DocumentIndex;
 use Dobbeltklikk\Sdk\Requests\Document\DocumentShow;
 use Dobbeltklikk\Sdk\Requests\Document\DocumentStore;
 use Dobbeltklikk\Sdk\Requests\Document\DocumentUpdate;
-use Dobbeltklikk\Sdk\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\BaseResource;
+use Saloon\Http\Response;
 
-class Document extends Resource
+class Document extends BaseResource
 {
-	public function DocumentIndex(): Response
-	{
-		return $this->connector->send(new DocumentIndex());
-	}
+    public function DocumentIndex(): Response
+    {
+        return $this->connector->send(new DocumentIndex());
+    }
 
+    public function DocumentStore(): Response
+    {
+        return $this->connector->send(new DocumentStore());
+    }
 
-	public function DocumentStore(): Response
-	{
-		return $this->connector->send(new DocumentStore());
-	}
+    /**
+     * @param  int  $document The document ID
+     */
+    public function DocumentShow(int $document): Response
+    {
+        return $this->connector->send(new DocumentShow($document));
+    }
 
+    /**
+     * @param  int  $document The document ID
+     */
+    public function DocumentDestroy(int $document): Response
+    {
+        return $this->connector->send(new DocumentDestroy($document));
+    }
 
-	/**
-	 * @param int $document The document ID
-	 */
-	public function DocumentShow(int $document): Response
-	{
-		return $this->connector->send(new DocumentShow($document));
-	}
-
-
-	/**
-	 * @param int $document The document ID
-	 */
-	public function DocumentDestroy(int $document): Response
-	{
-		return $this->connector->send(new DocumentDestroy($document));
-	}
-
-
-	/**
-	 * @param int $document The document ID
-	 */
-	public function DocumentUpdate(int $document): Response
-	{
-		return $this->connector->send(new DocumentUpdate($document));
-	}
+    /**
+     * @param  int  $document The document ID
+     */
+    public function DocumentUpdate(int $document): Response
+    {
+        return $this->connector->send(new DocumentUpdate($document));
+    }
 }

@@ -2,7 +2,6 @@
 
 namespace Dobbeltklikk\Sdk\Requests\DocumentType;
 
-use DateTime;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
@@ -11,20 +10,18 @@ use Saloon\Http\Request;
  */
 class DocumentTypeShow extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/document-types/{$this->documentType}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/document-types/{$this->documentType}";
-	}
-
-
-	/**
-	 * @param int $documentType The document type ID
-	 */
-	public function __construct(
-		protected int $documentType,
-	) {
-	}
+    /**
+     * @param  int  $documentType The document type ID
+     */
+    public function __construct(
+        protected int $documentType,
+    ) {
+    }
 }

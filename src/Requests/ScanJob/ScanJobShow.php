@@ -2,7 +2,6 @@
 
 namespace Dobbeltklikk\Sdk\Requests\ScanJob;
 
-use DateTime;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
@@ -11,20 +10,15 @@ use Saloon\Http\Request;
  */
 class ScanJobShow extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/scans/{$this->jobId}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/scans/{$this->jobId}";
-	}
-
-
-	/**
-	 * @param string $jobId
-	 */
-	public function __construct(
-		protected string $jobId,
-	) {
-	}
+    public function __construct(
+        protected string $jobId,
+    ) {
+    }
 }

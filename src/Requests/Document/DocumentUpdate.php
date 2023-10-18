@@ -2,7 +2,6 @@
 
 namespace Dobbeltklikk\Sdk\Requests\Document;
 
-use DateTime;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
@@ -13,22 +12,20 @@ use Saloon\Traits\Body\HasJsonBody;
  */
 class DocumentUpdate extends Request implements HasBody
 {
-	use HasJsonBody;
+    use HasJsonBody;
 
-	protected Method $method = Method::PATCH;
+    protected Method $method = Method::PATCH;
 
+    public function resolveEndpoint(): string
+    {
+        return "/documents/{$this->document}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/documents/{$this->document}";
-	}
-
-
-	/**
-	 * @param int $document The document ID
-	 */
-	public function __construct(
-		protected int $document,
-	) {
-	}
+    /**
+     * @param  int  $document The document ID
+     */
+    public function __construct(
+        protected int $document,
+    ) {
+    }
 }

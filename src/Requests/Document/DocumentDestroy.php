@@ -2,7 +2,6 @@
 
 namespace Dobbeltklikk\Sdk\Requests\Document;
 
-use DateTime;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
@@ -11,20 +10,18 @@ use Saloon\Http\Request;
  */
 class DocumentDestroy extends Request
 {
-	protected Method $method = Method::DELETE;
+    protected Method $method = Method::DELETE;
 
+    public function resolveEndpoint(): string
+    {
+        return "/documents/{$this->document}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/documents/{$this->document}";
-	}
-
-
-	/**
-	 * @param int $document The document ID
-	 */
-	public function __construct(
-		protected int $document,
-	) {
-	}
+    /**
+     * @param  int  $document The document ID
+     */
+    public function __construct(
+        protected int $document,
+    ) {
+    }
 }

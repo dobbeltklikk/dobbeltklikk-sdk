@@ -1,0 +1,60 @@
+{
+    "name": "dobbeltklikk/dobbeltklikk-sdk",
+    "description": "Laravel SDK for the Dobbeltklikk API",
+    "keywords": [
+        "dobbeltklikk",
+        "api",
+        "sdk"
+    ],
+    "homepage": "https://github.com/dobbeltklikk/dobbeltklikk-sdk",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Helge Sverre",
+            "email": "helge.sverre@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "saloonphp/laravel-plugin": "^v3.0.0"
+    },
+    "require-dev": {
+        "nunomaduro/collision": "^7.8",
+        "nunomaduro/larastan": "^2.0.1",
+        "orchestra/testbench": "^8.8",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "spatie/laravel-ray": "^1.26",
+        "laravel/pint": "^v1.13",
+        "pestphp/pest": "^v2.20.0",
+        "pestphp/pest-plugin-arch": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.2",
+        "spatie/ray": "^1.28"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dobbeltklikk\\Sdk\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dobbeltklikk\\Sdk\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest --no-coverage",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
